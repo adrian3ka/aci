@@ -1,0 +1,20 @@
+#content {
+  width: 80%;
+  margin: auto;
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+h4#alert {
+  background-color: #f2dede;
+  padding: 20px;
+  border-radius: 20px;
+  border: 2px solid red;
+  color: #a94442;
+}
+
+.remove {
+  float: right;
+  color: red;
+  cursor: pointer;
+}
