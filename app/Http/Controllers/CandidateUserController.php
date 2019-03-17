@@ -127,6 +127,19 @@ class CandidateUserController extends Controller
     
     public function member($id) {
         $candidate = CandidateUser::find($id);
+        $user = New User();
+        $user->name = $candidate->name;
+        $user->email = $candidate->email;
+        $user->identity_number = $candidate->identity_number;
+        $user->date_of_birth = $candidate->date_of_birth;
+        $user->address = $candidate->address;
+        $user->height = $candidate->height;
+        $user->weight = $candidate->weight;
+		$user->password = bcrypt('acisehat123');
+		
+		$user->save();
+		
+		echo $user;
         echo $candidate;
 	}
 }
