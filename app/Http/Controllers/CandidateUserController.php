@@ -129,7 +129,7 @@ class CandidateUserController extends Controller
 		
         $candidate = CandidateUser::find($id);
 		
-		$existingUser = User::where('email', $candidate->email);
+		$existingUser = User::where('email', $candidate->email)->first();
        
         if ($existingUser) {
 			return back()->with('warning','User Already Registered');
@@ -148,7 +148,6 @@ class CandidateUserController extends Controller
 		$user->save();
 		$candidate->delete();
 		
-		echo $user;
-        echo $candidate;
+        return redirect('candidate_users')->with('success','Successfully Registering User');
 	}
 }

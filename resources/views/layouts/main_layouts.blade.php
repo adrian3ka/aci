@@ -37,6 +37,7 @@
 							    @if(Auth::user()->email == 'lidia@gmail.com')
 							        <li><a href="{{ url('/master_hobbies/') }}">Manage Hobby</a></li>
 							        <li><a href="{{ url('/candidate_users/') }}">Manage Candidate</a></li>
+							        <li><a href="{{ url('/users/') }}">Manage User</a></li>
 							        <li><a href="{{ url('/schedules/') }}">Manage Schedule</a></li>
 							    @endif
 							@else

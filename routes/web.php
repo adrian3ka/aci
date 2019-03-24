@@ -24,5 +24,6 @@ Route::get('/about', function(){
 });
 Route::get('candidate_users/members/{id}', 'CandidateUserController@member');
 Route::resource('candidate_users', 'CandidateUserController');
+Route::resource('users', 'UserController');
 Route::resource('master_hobbies', 'MasterHobbyController');
 Route::resource('schedules', 'ScheduleController');
