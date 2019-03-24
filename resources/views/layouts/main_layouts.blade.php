@@ -66,6 +66,7 @@
 				</div>
 			</nav>
             <div id="content">
+                @include('flash-message')
 				@yield('content')
             </div>
             

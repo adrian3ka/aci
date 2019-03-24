@@ -126,7 +126,15 @@ class CandidateUserController extends Controller
     }
     
     public function member($id) {
+		
         $candidate = CandidateUser::find($id);
+		
+		$existingUser = User::where('email', $candidate->email);
+       
+        if ($existingUser) {
+			return back()->with('warning','User Already Registered');
+		}
+       
         $user = New User();
         $user->name = $candidate->name;
         $user->email = $candidate->email;
@@ -138,6 +146,7 @@ class CandidateUserController extends Controller
 		$user->password = bcrypt('acisehat123');
 		
 		$user->save();
+		$candidate->delete();
 		
 		echo $user;
         echo $candidate;
