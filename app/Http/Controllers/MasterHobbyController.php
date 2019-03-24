@@ -99,5 +99,8 @@ class MasterHobbyController extends Controller
     public function destroy($id)
     {
         //
+        $data = MasterHobby::find($id);
+        $data->delete();
+        return redirect('master_hobbies');
     }
 }
