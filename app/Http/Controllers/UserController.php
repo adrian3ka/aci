@@ -80,8 +80,6 @@ class UserController extends Controller
         //
         $user = User::find($id);
         $input = $request->all();
-        echo $user;
-        print_r($input);
         $user->contribution = $input['contribution'];
         $user->save();
         
