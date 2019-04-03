@@ -68,6 +68,10 @@
         <small id="weightHelp" class="form-text text-muted">Dalam kilogram.</small>
     </div>
     <div class="form-group">
+        <label for="weight">Golongan Data</label>
+        <input type="text" class="form-control" name="blood_type" placeholder="Masukkan Golongan Darah Anda" required>
+    </div>
+    <div class="form-group">
         <label for="weight">Hobi</label>
         <br>
         <select class="multiple-select" style="width: 95%" name="hobby_ids[]" multiple="multiple">

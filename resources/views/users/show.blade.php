@@ -36,6 +36,10 @@
           <th>Berat Badan</th>
           	<td>{{ $user->weight }} kg</td>
         </tr>
+        <tr>
+          <th>Golongan Darah</th>
+          	<td>{{ $user->blood_type }}</td>
+        </tr>
     </tbody>
 </table>
 

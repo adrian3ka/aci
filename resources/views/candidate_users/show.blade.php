@@ -36,6 +36,10 @@
           <th>Berat Badan</th>
           	<td>{{ $candidate->weight }} kg</td>
         </tr>
+        <tr>
+          <th>Golongan Darah</th>
+          	<td>{{ $candidate->blood_type }}</td>
+        </tr>
     </tbody>
 </table>
 <a href="{{ url('candidate_users/members/' . $candidate->id) }}">

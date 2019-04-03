@@ -64,8 +64,11 @@ class CandidateUserController extends Controller
         $candidate_user->date_of_birth = $input['date_of_birth'];
         $candidate_user->height = $input['height'];
         $candidate_user->weight = $input['weight'];
+        $candidate_user->blood_type = $input['blood_type'];
         $candidate_user->save();
-        $candidate_user->hobbies()->sync($input['hobby_ids']);
+        if (isset($input['hobby_ids'])) {
+            $candidate_user->hobbies()->sync($input['hobby_ids']);
+        }
         
         $contact_ids = [];
         for( $i = 0 ; $i < count($input['contact_name']); $i++) {
@@ -77,7 +80,7 @@ class CandidateUserController extends Controller
 		}
 		
         $candidate_user->contacts()->sync($contact_ids);
-		return redirect('');
+		return redirect('')->with('success','Pendaftaran Telah Berhasil');;
     }
 
     public function show($id)
@@ -143,6 +146,7 @@ class CandidateUserController extends Controller
         $user->address = $candidate->address;
         $user->height = $candidate->height;
         $user->weight = $candidate->weight;
+        $user->blood_type = $candidate->blood_type;
 		$user->password = bcrypt('acisehat123');
 		
 		$user->save();
