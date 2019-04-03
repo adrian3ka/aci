@@ -68,7 +68,7 @@
         <small id="weightHelp" class="form-text text-muted">Dalam kilogram.</small>
     </div>
     <div class="form-group">
-        <label for="weight">Golongan Data</label>
+        <label for="weight">Golongan Darah</label>
         <input type="text" class="form-control" name="blood_type" placeholder="Masukkan Golongan Darah Anda" required>
     </div>
     <div class="form-group">
