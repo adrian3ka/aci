@@ -160,7 +160,6 @@ class CandidateUserController extends Controller
         $user->contacts()->sync($candidate->contacts);
 		$candidate->delete();
 		
-		exit;
         return redirect('candidate_users')->with('success','Successfully Registering User');
 	}
 }
