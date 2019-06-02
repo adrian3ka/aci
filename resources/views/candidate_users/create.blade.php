@@ -52,7 +52,7 @@
     </div>
     <div class="form-group">
         <label for="date_of_birth">Tanggal Lahir</label>
-        <input class="form-control" type="date" name="date_of_birth" required>
+        <input class="form-control" type="date" name="date_of_birth" value="1950-12-31" required>
     </div>
     <div class="form-group">
         <label for="identity_number">Alamat Rumah</label>
