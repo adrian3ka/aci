@@ -25,6 +25,10 @@
           	<td>{{ $candidate->date_of_birth }}</td>
         </tr>
         <tr>
+          <th>Tempat Lahir</th>
+          	<td>{{ $candidate->birth_place }}</td>
+        </tr>
+        <tr>
           <th>Alamat</th>
           	<td>{{ $candidate->address }}</td>
         </tr>
@@ -39,6 +43,14 @@
         <tr>
           <th>Golongan Darah</th>
           	<td>{{ $candidate->blood_type }}</td>
+        </tr>
+        <tr>
+          <th>Hobi</th>
+          	<td>{{ ($candidate->hobbies == null ? "" : join(', ', $candidate->hobbies->pluck('name')->toArray())) }}</td>
+        </tr>
+        <tr>
+          <th>Contacts</th>
+          	<td>{{ ($candidate->contacts == null ? "" : join(', ', $candidate->contacts->pluck('name')->toArray())) }}</td>
         </tr>
     </tbody>
 </table>

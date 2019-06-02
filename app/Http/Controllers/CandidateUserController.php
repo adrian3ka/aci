@@ -58,6 +58,7 @@ class CandidateUserController extends Controller
         $input = $request->all();
         $candidate_user = new CandidateUser;
         $candidate_user->name = $input['name'];
+        $candidate_user->birth_place = $input['birth_place'];
         $candidate_user->email = $input['email'];
         $candidate_user->identity_number = $input['identity_number'];
         $candidate_user->address = $input['address'];
@@ -75,6 +76,7 @@ class CandidateUserController extends Controller
 			$new_contact = new Contact;
 			$new_contact->name = $input['contact_name'][$i];
 			$new_contact->phone_number = $input['contact_phone_number'][$i];
+			$new_contact->relation = $input['relation'][$i];
 			$new_contact->save();
 			array_push($contact_ids, $new_contact->id);
 		}
@@ -132,13 +134,16 @@ class CandidateUserController extends Controller
 		
         $candidate = CandidateUser::find($id);
 		
-		$existingUser = User::where('email', $candidate->email)->first();
-       
-        if ($existingUser) {
-			return back()->with('warning','User Already Registered');
+		if ($candidate->email != null) {
+            $existingUser = User::where('email', $candidate->email)->first();
+
+            if ($existingUser) {
+	            return back()->with('warning','User Already Registered');
+            }
 		}
        
         $user = New User();
+        $user->birth_place = $candidate->birth_place;
         $user->name = $candidate->name;
         $user->email = $candidate->email;
         $user->identity_number = $candidate->identity_number;
@@ -146,12 +151,16 @@ class CandidateUserController extends Controller
         $user->address = $candidate->address;
         $user->height = $candidate->height;
         $user->weight = $candidate->weight;
-        $user->blood_type = $candidate->blood_type;
+        $user->blood_type = $candidate->blood_type;        
 		$user->password = bcrypt('acisehat123');
 		
 		$user->save();
+
+        $user->hobbies()->sync($candidate->hobbies);
+        $user->contacts()->sync($candidate->contacts);
 		$candidate->delete();
 		
+		exit;
         return redirect('candidate_users')->with('success','Successfully Registering User');
 	}
 }

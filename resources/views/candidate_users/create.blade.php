@@ -26,6 +26,8 @@
                     '<div class="remove">Hapus</div>' + 
 			        '<input type="text" class="form-control" name="contact_name[]" placeholder="Masukkan Nama Kontak" required>' + 
 			        '<br>' + 
+			        '<input type="text" class="form-control" name="relation[]" placeholder="Masukkan Relasi">' + 
+			        '<br>' + 
 			        '<input type="text" class="form-control" name="contact_phone_number[]" placeholder="Masukkan Nomor Kontak" required>' + 
 			        '<hr>' +
                 '</div>');
@@ -41,19 +43,28 @@
         <label for="name">Name</label>
         <input type="text" class="form-control" name="name" placeholder="Masukkan Nama Anda" required>
     </div>
+    
     <div class="form-group">
         <label for="email">Alamat Email</label>
         <input type="email" class="form-control" name="email" placeholder="Masukkan Alamat Email Anda">
         <small id="emailHelp" class="form-text text-muted">Silakan masukkan alamat email anda untuk beberapa pemberitahuan dari kami.</small>
     </div>
+    
     <div class="form-group">
         <label for="identity_number">Nomor Identitas</label>
         <input type="text" class="form-control" name="identity_number" placeholder="Masukkan Nomor Identitas Anda">
     </div>
+    
     <div class="form-group">
         <label for="date_of_birth">Tanggal Lahir</label>
         <input class="form-control" type="date" name="date_of_birth" value="1950-12-31" required>
     </div>
+    
+    <div class="form-group">
+        <label for="date_of_birth">Tempat Lahir</label>
+        <input class="form-control" type="text" name="birth_place" >
+    </div>
+    
     <div class="form-group">
         <label for="identity_number">Alamat Rumah</label>
         <input type="text" class="form-control" name="address" placeholder="Masukkan Alamat Rumah Anda" required>
@@ -85,6 +96,8 @@
         <label for="weight">Kontak yang dapat dihubungi dalam keadaan darurat</label>
         <div class="detail-contact">
 			<input type="text" class="form-control" name="contact_name[]" placeholder="Masukkan Nama Kontak" required>
+			<br>
+			<input type="text" class="form-control" name="relation[]" placeholder="Masukkan Relasi">
 			<br>
 			<input type="text" class="form-control" name="contact_phone_number[]" placeholder="Masukkan Nomor Kontak" required>
 			<hr>
