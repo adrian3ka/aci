@@ -43,12 +43,12 @@
     </div>
     <div class="form-group">
         <label for="email">Alamat Email</label>
-        <input type="email" class="form-control" name="email" placeholder="Masukkan Alamat Email Anda" required>
+        <input type="email" class="form-control" name="email" placeholder="Masukkan Alamat Email Anda">
         <small id="emailHelp" class="form-text text-muted">Silakan masukkan alamat email anda untuk beberapa pemberitahuan dari kami.</small>
     </div>
     <div class="form-group">
         <label for="identity_number">Nomor Identitas</label>
-        <input type="text" class="form-control" name="identity_number" placeholder="Masukkan Nomor Identitas Anda"required>
+        <input type="text" class="form-control" name="identity_number" placeholder="Masukkan Nomor Identitas Anda">
     </div>
     <div class="form-group">
         <label for="date_of_birth">Tanggal Lahir</label>
