@@ -12,6 +12,12 @@
           <th>Nama</th>
             <td>{{ $user->name }}</td>
         </tr>
+        
+        <tr>
+          <th>Jenis Kelamin</th>
+            <td>{{ $user->gender }}</td>
+        </tr>
+        
         <tr>
           <th>Email</th>
           	<td>{{ $user->email }}</td>

@@ -45,6 +45,13 @@
     </div>
     
     <div class="form-group">
+        <label for="name">Jenis Kelamin</label>
+        <br>
+        <input type="radio" name="gender" value="M"> Pria
+        <input type="radio" name="gender" value="F"> Wanita
+    </div>
+    
+    <div class="form-group">
         <label for="email">Alamat Email</label>
         <input type="email" class="form-control" name="email" placeholder="Masukkan Alamat Email Anda">
         <small id="emailHelp" class="form-text text-muted">Silakan masukkan alamat email anda untuk beberapa pemberitahuan dari kami.</small>

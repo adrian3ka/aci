@@ -13,6 +13,10 @@
             <td>{{ $candidate->name }}</td>
         </tr>
         <tr>
+          <th>Jenis Kelamin</th>
+            <td>{{ $candidate->gender }}</td>
+        </tr>
+        <tr>
           <th>Email</th>
           	<td>{{ $candidate->email }}</td>
         </tr>

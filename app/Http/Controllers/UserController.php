@@ -14,6 +14,16 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth.admin', ['except' =>
+            [
+                'create',
+                'store'
+            ]
+        ]);
+    }
+    
     public function index()
     {
         //
@@ -91,6 +101,7 @@ class UserController extends Controller
         $user->contribution = $input['contribution'];
         
         $user->name = $input['name'];
+        $user->gender = $input['gender'];
         $user->birth_place = $input['birth_place'];
         $user->cellphone = $input['cellphone'];
         $user->birth_place = $input['birth_place'];
@@ -132,5 +143,8 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+        $user = User::find($id);
+        $user->delete();
+        return redirect('users');
     }
 }

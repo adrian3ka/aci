@@ -58,6 +58,7 @@ class CandidateUserController extends Controller
         $input = $request->all();
         $candidate_user = new CandidateUser;
         $candidate_user->name = $input['name'];
+        $candidate_user->gender = $input['gender'];
         $candidate_user->birth_place = $input['birth_place'];
         $candidate_user->cellphone = $input['cellphone'];
         $candidate_user->birth_place = $input['birth_place'];

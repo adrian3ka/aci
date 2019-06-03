@@ -15,4 +15,12 @@ class CandidateUser extends Model
 	public function contacts () {
         return $this->belongsToMany('App\Contact', 'candidate_user_contact');
     }
+    
+    public function getGenderAttribute($value){
+        if ($value == "M") {
+            return "Pria";	
+        } else {
+            return "Wanita";	
+        }
+	}
 }

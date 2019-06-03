@@ -36,4 +36,12 @@ class User extends Authenticatable
 	public function contacts () {
         return $this->belongsToMany('App\Contact', 'user_contact');
     }
+    
+    public function getGenderAttribute($value){
+        if ($value == "M") {
+            return "Pria";	
+        } else {
+            return "Wanita";	
+        }
+	}
 }
