@@ -21,6 +21,11 @@
           	<td>{{ $user->identity_number }}</td>
         </tr>
         <tr>
+          <th>Nomor Handphone</th>
+          	<td>{{ $user->cellphone }}</td>
+        </tr>
+        
+        <tr>
           <th>Tanggal Lahir</th>
           	<td>{{ $user->date_of_birth }}</td>
         </tr>
@@ -55,6 +60,7 @@
     </tbody>
 </table>
 
+
 <form method="POST" action=" {{ url('users/' . $user->id) }}">
     {{ csrf_field() }}
     {{ method_field('PATCH') }}
@@ -63,6 +69,7 @@
         <input type="number" class="form-control" name="contribution" placeholder="Masukkan Iuran Anggota" value="{{ $user->contribution }}" required>
         <small id="weightHelp" class="form-text text-muted">Dalam Rupiah</small>
     </div>
+    <a class="btn btn-success" href="{{ url('users/' . $user->id . '/edit') }}"" >Edit</a>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 @endsection

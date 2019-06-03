@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Contact;
 use App\MasterHobby;
 use Illuminate\Http\Request;
 
@@ -88,6 +89,35 @@ class UserController extends Controller
         $user = User::find($id);
         $input = $request->all();
         $user->contribution = $input['contribution'];
+        
+        $user->name = $input['name'];
+        $user->birth_place = $input['birth_place'];
+        $user->cellphone = $input['cellphone'];
+        $user->birth_place = $input['birth_place'];
+        $user->email = $input['email'];
+        $user->identity_number = $input['identity_number'];
+        $user->address = $input['address'];
+        $user->date_of_birth = $input['date_of_birth'];
+        $user->height = $input['height'];
+        $user->weight = $input['weight'];
+        $user->blood_type = $input['blood_type'];
+        
+        
+        if (isset($input['hobby_ids'])) {
+            $user->hobbies()->sync($input['hobby_ids']);
+        }
+                
+        $contact_ids = [];
+        for( $i = 0 ; $i < count($input['contact_name']); $i++) {
+			$new_contact = new Contact;
+			$new_contact->name = $input['contact_name'][$i];
+			$new_contact->phone_number = $input['contact_phone_number'][$i];
+			$new_contact->relation = $input['relation'][$i];
+			$new_contact->save();
+			array_push($contact_ids, $new_contact->id);
+		}
+		
+        $user->contacts()->sync($contact_ids);
         $user->save();
         
         return back()->with('success','Successfully Update User Information');
