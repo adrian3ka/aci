@@ -46,6 +46,13 @@
     </div>
     
     <div class="form-group">
+        <label for="name">Jenis Kelamin</label>
+        <br>
+        <input type="radio" name="gender" value="M" {{ (($user->gender == 'Pria') ? 'checked': '') }}> Pria
+        <input type="radio" name="gender" value="F" {{ (($user->gender == 'Wanita') ? 'checked': '') }}> Wanita
+    </div>
+    
+    <div class="form-group">
         <label for="name">Kontribusi</label>
         <input type="text" class="form-control" name="contribution" placeholder="Masukkan Kontribusi Peserta" value="{{ $user->contribution }}" required>
     </div>
