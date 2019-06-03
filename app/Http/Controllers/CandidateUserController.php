@@ -59,6 +59,8 @@ class CandidateUserController extends Controller
         $candidate_user = new CandidateUser;
         $candidate_user->name = $input['name'];
         $candidate_user->birth_place = $input['birth_place'];
+        $candidate_user->cellphone = $input['cellphone'];
+        $candidate_user->birth_place = $input['birth_place'];
         $candidate_user->email = $input['email'];
         $candidate_user->identity_number = $input['identity_number'];
         $candidate_user->address = $input['address'];
@@ -145,6 +147,7 @@ class CandidateUserController extends Controller
         $user = New User();
         $user->birth_place = $candidate->birth_place;
         $user->name = $candidate->name;
+        $user->cellphone = $candidate->cellphone;
         $user->email = $candidate->email;
         $user->identity_number = $candidate->identity_number;
         $user->date_of_birth = $candidate->date_of_birth;

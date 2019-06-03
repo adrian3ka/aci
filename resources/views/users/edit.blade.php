@@ -39,20 +39,26 @@
 	@csrf
     <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" class="form-control" name="name" placeholder="Masukkan Nama Anda" required>
+        <input type="text" class="form-control" name="name" placeholder="Masukkan Nama Anda" value="{{ $user->name }}" required>
     </div>
     <div class="form-group">
         <label for="email">Alamat Email</label>
-        <input type="email" class="form-control" name="email" placeholder="Masukkan Alamat Email Anda" required>
+        <input type="email" class="form-control" name="email" placeholder="Masukkan Alamat Email Anda" value="{{ $user->email }}" required>
         <small id="emailHelp" class="form-text text-muted">Silakan masukkan alamat email anda untuk beberapa pemberitahuan dari kami.</small>
     </div>
     <div class="form-group">
         <label for="identity_number">Nomor Identitas</label>
-        <input type="text" class="form-control" name="identity_number" placeholder="Masukkan Nomor Identitas Anda"required>
+        <input type="text" class="form-control" name="identity_number" placeholder="Masukkan Nomor Identitas Anda" value="{{ $user->identity_number }}" required>
     </div>
+    
+    <div class="form-group">
+        <label for="date_of_birth">Tempat Lahir</label>
+        <input class="form-control" type="text" name="birth_place" value="{{ $user->birth_place }}" required>
+    </div>
+    
     <div class="form-group">
         <label for="date_of_birth">Tanggal Lahir</label>
-        <input class="form-control" type="date" name="date_of_birth" required>
+        <input class="form-control" type="date" name="date_of_birth" value="{{ $user->date_of_birth }}" required>
     </div>
     <div class="form-group">
         <label for="identity_number">Alamat Rumah</label>

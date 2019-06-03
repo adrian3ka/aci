@@ -56,6 +56,11 @@
     </div>
     
     <div class="form-group">
+        <label for="cellphone">Nomor Handphone</label>
+        <input type="text" class="form-control" name="cellphone" placeholder="Masukkan Nomor Handphone Anda">
+    </div>
+    
+    <div class="form-group">
         <label for="date_of_birth">Tanggal Lahir</label>
         <input class="form-control" type="date" name="date_of_birth" value="1950-12-31" required>
     </div>

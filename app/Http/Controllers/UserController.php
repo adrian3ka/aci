@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\MasterHobby;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -66,6 +67,12 @@ class UserController extends Controller
     public function edit($id)
     {
         //
+        $user = User::find($id);
+        $hobbies = MasterHobby::all();
+        return view('users/edit',[
+            'user' => $user,
+            'hobbies' => $hobbies
+        ]);
     }
 
     /**

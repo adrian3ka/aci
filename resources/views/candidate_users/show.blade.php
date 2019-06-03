@@ -21,6 +21,10 @@
           	<td>{{ $candidate->identity_number }}</td>
         </tr>
         <tr>
+          <th>No Handphone</th>
+          	<td>{{ $candidate->cellphone }}</td>
+        </tr>
+        <tr>
           <th>Tanggal Lahir</th>
           	<td>{{ $candidate->date_of_birth }}</td>
         </tr>
