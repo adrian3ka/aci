@@ -6,6 +6,7 @@
 <table class="table">
 	<th>
 		<td>Nama</td>
+		<td>Tanggal Lahir</td>
 		<td>Email</td>
 		<td>Nomor Handphone</td>
 		<td>Contribution</td>
@@ -15,6 +16,7 @@
 		<tr>
 			<td>{{ $user->id }}</td>
 			<td>{{ $user->name }}</td>
+			<td>{{ $user->date_of_birth }}</td>
 			<td>{{ $user->email }}</td>
 			<td>{{ $user->cellphone }}</td>
 			<td>Rp. {{ $user->contribution }},-</td>

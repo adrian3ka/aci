@@ -6,6 +6,7 @@ use App\User;
 use App\Contact;
 use App\MasterHobby;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -30,21 +31,29 @@ class UserController extends Controller
         $input = $request->all();
         $page_size = self::DEFAULT_PAGE_SIZE;
         $key = "";
+        $month = 0;
         
         if (isset($input['page_size'])) {
 			$page_size = $input['page_size'];
 		}
         
         if (!isset($input['key'])) {
-            $users = User::paginate($page_size);
+            $users = DB::table('users');
 	    } else {
 			$key = $input['key'];
-            $users = User::where('name', 'like', '%' . $input['key'] . '%')->paginate($page_size);
+            $users = User::where('name', 'like', '%' . $input['key'] . '%');
 		}
+		
+		if (isset($input['month'])) {
+			$month = $input['month'];
+			$users = $users->whereMonth('date_of_birth','=',$month);
+		}
+		$users = $users->paginate($page_size);
         return view('users/index',[
             'users' => $users->appends($input),
             'page_size' => $page_size,
             'key' => $key,
+            'month' => $month,
         ]);
     }
 

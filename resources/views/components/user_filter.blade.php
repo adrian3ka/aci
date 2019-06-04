@@ -18,6 +18,24 @@
                             </select>                                
                         </div> <!-- form group [rows] -->
                         <div class="form-group">
+                            <label class="filter-col" style="margin-right:0;" for="month">Bulan Lahir</label>
+                            <select name="month" class="form-control">
+                                <option {{ (($month == 0) ? "selected" : "") }} value="0"></option>
+                                <option {{ (($month == 1) ? "selected" : "") }} value="1">Januari</option>
+                                <option {{ (($month == 2) ? "selected" : "") }} value="2">Februari</option>
+                                <option {{ (($month == 3) ? "selected" : "") }} value="3">Maret</option>
+                                <option {{ (($month == 4) ? "selected" : "") }} value="4">April</option>
+                                <option {{ (($month == 5) ? "selected" : "") }} value="5">Mei</option>
+                                <option {{ (($month == 6) ? "selected" : "") }} value="6">Juni</option>
+                                <option {{ (($month == 7) ? "selected" : "") }} value="7">Juli</option>
+                                <option {{ (($month == 8) ? "selected" : "") }} value="8">Agustus</option>
+                                <option {{ (($month == 9) ? "selected" : "") }} value="9">September</option>
+                                <option {{ (($month == 10) ? "selected" : "") }} value="10">Oktober</option>
+                                <option {{ (($month == 11) ? "selected" : "") }} value="11">November</option>
+                                <option {{ (($month == 12) ? "selected" : "") }} value="12">Desember</option>
+                            </select>                                
+                        </div> <!-- form group [month] -->
+                        <div class="form-group">
                             <label class="filter-col" style="margin-right:0;" for="key">Search:</label>
                             <input type="text" class="form-control input-sm" name="key" value="{{ $key }}">
                         </div><!-- form group [search] -->
