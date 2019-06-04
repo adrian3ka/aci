@@ -30,6 +30,9 @@
 	@endforeach
 </table>
 <div>
+	<h4>Total : {{ $users->total() }}</h4>
+</div>
+<div>
     <div>
     	{{ $users->links() }}
     </div>
