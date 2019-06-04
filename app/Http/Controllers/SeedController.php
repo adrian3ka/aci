@@ -17,7 +17,8 @@ class SeedController extends Controller
 		    'date_of_birth' => '1965-12-21',
 		    'address' => 'Jl. Kranggan 70',
 		    'height' => 165,
-		    'weight' => 65
+		    'weight' => 65,
+		    'blood_type' => 'B'
 		]);
 		
 		App\MasterHobby::firstOrCreate(['name' => 'Menyanyi']);
