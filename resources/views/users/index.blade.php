@@ -2,6 +2,7 @@
 
 
 @section('content')
+@include('components.user_filter')
 <table class="table">
 	<th>
 		<td>Nama</td>

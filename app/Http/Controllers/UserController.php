@@ -14,6 +14,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    const DEFAULT_PAGE_SIZE = 10;
     public function __construct()
     {
         $this->middleware('auth.admin', ['except' =>
@@ -24,12 +25,26 @@ class UserController extends Controller
         ]);
     }
     
-    public function index()
+    public function index(Request $request)
     {
-        //
-        $users = User::paginate(10);
+        $input = $request->all();
+        $page_size = self::DEFAULT_PAGE_SIZE;
+        $key = "";
+        
+        if (isset($input['page_size'])) {
+			$page_size = $input['page_size'];
+		}
+        
+        if (!isset($input['key'])) {
+            $users = User::paginate($page_size);
+	    } else {
+			$key = $input['key'];
+            $users = User::where('name', 'like', '%' . $input['key'] . '%')->paginate($page_size);
+		}
         return view('users/index',[
-            'users' => $users
+            'users' => $users->appends($input),
+            'page_size' => $page_size,
+            'key' => $key,
         ]);
     }
 
