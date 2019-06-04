@@ -7,6 +7,7 @@
 	<th>
 		<td>Nama</td>
 		<td>Email</td>
+		<td>Nomor Handphone</td>
 		<td>Contribution</td>
 		<td>Action</td>
 	</th>
@@ -15,6 +16,7 @@
 			<td>{{ $user->id }}</td>
 			<td>{{ $user->name }}</td>
 			<td>{{ $user->email }}</td>
+			<td>{{ $user->cellphone }}</td>
 			<td>Rp. {{ $user->contribution }},-</td>
 			<td>
                 <a href="{{ url('users/' . $user->id) }}">
