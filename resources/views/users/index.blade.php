@@ -19,7 +19,7 @@
                 <a href="{{ url('users/' . $user->id) }}">
                     <button type="button" class="btn btn-primary">Lihat</button>
                 </a>
-                <form style="display: inline-block;" method="POST" action="{{ url('candidate_users/' . $user->id) }}">
+                <form style="display: inline-block;" method="POST" action="{{ url('users/' . $user->id) }}">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger">Hapus</button>
