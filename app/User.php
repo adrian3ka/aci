@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -29,6 +30,10 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
     
+    protected $dates = [
+        'date_of_birth',
+    ];
+    
     
 	public function hobbies () {
         return $this->belongsToMany('App\MasterHobby', 'user_master_hobby');
@@ -43,5 +48,9 @@ class User extends Authenticatable
         } else {
             return "Wanita";	
         }
+	}
+	
+	public function getDateOfBirthAttribute($value){
+        return Carbon::parse($value);
 	}
 }

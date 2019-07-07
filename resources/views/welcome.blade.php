@@ -50,7 +50,7 @@
 @section('content')
 
 <div class="main-banner">
-@for ($i = 1; $i <= 3; $i++)
+@for ($i = 4; $i <= 5; $i++)
 		<img src="{{ url('img/banner/banner_' .$i .'.jpg') }}">
 @endfor
 </div>
