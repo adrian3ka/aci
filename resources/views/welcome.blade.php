@@ -58,10 +58,10 @@
 warga senior yang SEHAT, CERIA dan BAHAGIA? Bergabunglah dengan H2C ACI, 
 kita akan merasakan perbedaannya <b>"MUDA DALAM HATI"</b></p>
 <div class="row">
-	@for ($i = 1; $i <= 4; $i++)
+	@for ($i = 1; $i <= 24; $i++)
     <div class="col-md-6">
 		<div style="border-radius: 10px;">
-            <img src="{{ url('img/image' .$i .'.jpg') }}" class="welcome-image">
+            <img src="{{ url('img/activity/Activity_' .$i .'.jpeg') }}" class="welcome-image">
         </div>
     </div>
     @endfor
